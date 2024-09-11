@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #5c677d;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background: #001233;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+header .logo img {
+    width: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+header .contact-info {
+    color: #fff;
+    text-align: right;
+}
+
+/* Our Services Section */
+.our-services {
+    padding: 60px 20px;
+    background-color: #edf2f4;
+    text-align: center;
+}
+
+.our-services .container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.our-services h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #001233;
+}
+
+.services-overview {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+
+.service-item {
+    text-align: center;
+    width: 30%;
+}
+
+.service-item i {
+    font-size: 3rem;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #5c677d;
+}
+
+/* Services Details Section */
+.services-details {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.services-details .container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.service-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.service-detail img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.service-detail:nth-child(even) img {
+    order: 2;
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.service-detail .service-text {
+    max-width: 600px;
+}
+
+.service-detail h2 {
+    font-size: 1.8rem;
+    color: #001233;
+    margin-bottom: 20px;
+}
+
+.service-detail p {
+    color: #5c677d;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Emergency Call Section */
+.emergency-call {
+    padding: 60px 20px;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSukTl4cryqhaZli-NCpqBkuUVZ0T9CCuhkvm3W2c5Vi1i7S5IwHa87W4XFuz99Cr07bP0&usqp=CAU') no-repeat center center/cover;
+    text-align: center;
+    color: #fff;
+}
+
+.emergency-call h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.emergency-call p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Images Section */
+.images-section {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+}
+
+.images-section .container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.images-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #001233;
+}
+
+.images-section p {
+    font-size: 1rem;
+    color: #5c677d;
+    margin-bottom: 40px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.image-item {
+    text-align: center;
+}
+
+.image-item img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 0px;
+}
+
+.image-item p {
+    margin-top: 10px;
+    color: #5c677d;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+    
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .services-overview {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .service-detail {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-detail img,
+    .service-text {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .service-text {
+        margin-top: 20px;
+    }
+
+    .emergency-call {
+        background-size: cover;
+    }
+
+    .emergency-call p {
+        font-size: 1rem;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-item {
+        margin-bottom: 40px;
+    }
+}

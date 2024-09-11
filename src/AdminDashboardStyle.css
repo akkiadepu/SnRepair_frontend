@@ -1,0 +1,40 @@
+
+
+/* Container for the dashboard */
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 20px; /* Added margin-bottom */
+  padding: 0; /* Added padding to the table */
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Image Styles */
+img {
+  max-width: 100px;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Form Styles */
