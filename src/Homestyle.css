@@ -17,7 +17,7 @@ header {
     padding: 1rem 0;
 }
 
-header .container {
+header .container1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,7 +57,7 @@ nav ul li a {
     padding: 100px 20px;
 }
 
-.hero .container {
+.hero .container1 {
     max-width: 1200px;
     margin: auto;
 }
@@ -83,6 +83,9 @@ nav ul li a {
     border-radius: 5px;
     font-size: 1.2rem;
 }
+.cta-button:hover{
+    color: #ccc;
+}
 
 .cta-button i {
     margin-right: 10px;
@@ -94,7 +97,7 @@ nav ul li a {
     color: #33415c;
 }
 
-.services .container {
+.services .container1 {
     max-width: 1200px;
     margin: auto;
 }
@@ -125,6 +128,7 @@ nav ul li a {
 .service-item img {
     max-width: 100%;
     border-radius: 5px;
+    aspect-ratio: 6/4;
 }
 
 .service-item h3 {
@@ -136,8 +140,8 @@ nav ul li a {
 }
 
 
-.button {
- --color: red;
+/* .button {
+ --color: rgb(214, 197, 197);
  padding: 0.8em 1.7em;
  background-color: transparent;
  border-radius: .9em;
@@ -147,7 +151,7 @@ nav ul li a {
  transition: .5s;
  font-weight: 400;
  font-size: 17px;
- border: 1px solid;
+  border: 1px solid; 
  text-transform: uppercase;
  color: var(--color);
  z-index: 1;
@@ -160,7 +164,7 @@ nav ul li a {
  height: 50px;
  transform: translate(-50%, -50%);
  position: absolute;
- border-radius: 50%;
+  border-radius: 50%; 
  z-index: -1;
  background-color: var(--color);
  transition: 1s ease;
@@ -182,60 +186,16 @@ nav ul li a {
 }
 
 .button:hover {
- color: rgb(10, 25, 30);
+ color: rgb(217, 223, 225);
 }
 
 .button:active {
  filter: brightness(.8);
-}
+} */
 
-.activities {
-    padding: 60px 20px;
-    color: #33415c;
-}
-
-.activities .container {
-    max-width: 1200px;
-    margin: auto;
-    text-align: center;
-}
-
-.activities h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.5rem;
-    color: #002855;
-}
-
-.activity-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.activity-item {
-    flex: 1 1 250px;
-    margin: 0 10px 20px;
-    text-align: center;
-}
-
-.activity-item img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-.activity-item h3 {
-    margin-top: 20px;
-}
-
-.activity-item p {
-    color: #5c677d;
-    text-align: left; /* Align paragraph to left */
-    margin-bottom: 10px; /* Add margin to separate paragraph and button */
-}
-
-.activity-link {
+.activity-links {
     display: inline-block;
+
     padding: 10px 20px;
     background: red;
     color: #fff;
@@ -244,9 +204,16 @@ nav ul li a {
     font-size: 1.2rem;
 }
 
-.activity-link:hover {
-    background: #002855;
+.activity-links:hover {
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+
+
 }
+
+
+
 
 .why-choose-us {
     background: #2b2d42;
@@ -255,7 +222,7 @@ nav ul li a {
     text-align: center;
 }
 
-.why-choose-us .container {
+.why-choose-us .container1 {
     max-width: 1200px;
     margin: auto;
 }
@@ -297,7 +264,7 @@ nav ul li a {
     color: #33415c;
 }
 
-.testimonials .container {
+.testimonials .container1 {
     max-width: 1200px;
     margin: auto;
 }
@@ -369,7 +336,7 @@ nav ul li a {
     color: #33415c;
 }
 
-.request-info .container {
+.request-info .container1 {
     max-width: 1200px;
     margin: auto;
 }
@@ -449,7 +416,7 @@ footer {
     padding: 20px 0;
 }
 
-footer .container {
+footer .container1 {
     max-width: 1200px;
     margin: auto;
     display: flex;
@@ -531,7 +498,7 @@ footer .container {
 
 
 @media (max-width: 768px) {
-    header .container {
+    header .container1 {
         flex-direction: column;
         text-align: center;
     }
@@ -567,9 +534,9 @@ footer .container {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
-    .header .container, .hero .container, .services .container, .activities .container, 
-    .why-choose-us .container, .testimonials .container, .request-info .container, 
-    footer .container {
+    .header .container1, .hero .container1, .services .container1, .activities .container1, 
+    .why-choose-us .container1, .testimonials .container1, .request-info .container1, 
+    footer .container1 {
         padding: 0 40px;
     }
 }
@@ -585,9 +552,9 @@ footer .container {
         margin: 20px 0;
     }
     
-    .header .container, .hero .container, .services .container, .activities .container, 
-    .why-choose-us .container, .testimonials .container, .request-info .container, 
-    footer .container {
+    .header .container1, .hero .container1, .services .container1, .activities .container1, 
+    .why-choose-us .container1, .testimonials .container1, .request-info .container1, 
+    footer .container1 {
         padding: 0 20px;
     }
     

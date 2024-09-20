@@ -9,8 +9,9 @@ function Services() {
          {/* <!-- Our Services Section --> */}
 <Header/>
        
+       <div className="servicesPage">
     <section className="our-services">
-        <div className="container">
+        <div className="container1">
             <h1>Our Services</h1>
             <div className="services-overview">
                 <div className="service-item">
@@ -34,7 +35,7 @@ function Services() {
 
     {/* <!-- Services Details Section --> */}
     <section className="services-details">
-        <div className="container">
+        <div className="container1">
             <div className="service-detail">
                 <img src="https://wallpaperaccess.com/full/2085201.jpg" alt="Brake System Maintenance and Repair"/>
                 <div className="service-text">
@@ -87,7 +88,7 @@ function Services() {
   
    {/* <!-- Emergency Call Section --> */}
     <section class="emergency-call">
-        <div class="container">
+        <div class="container1">
             <h1>24/7 Emergency Service</h1>
             <p>We provide emergency services round the clock. Call us anytime for immediate assistance and support.</p>
         </div>
@@ -95,7 +96,7 @@ function Services() {
 
     {/* <!-- Images Section --> */}
     <section class="images-section">
-        <div class="container">
+        <div class="container1">
             <div class="image-grid">
                 <div class="image-item">
                     <img src="https://st.depositphotos.com/1387241/4126/i/450/depositphotos_41261655-stock-photo-close-up-of-spray-gun.jpg" alt="Image 1"/>
@@ -130,6 +131,7 @@ function Services() {
             </div>
         </div>
     </section>
+    </div>
 
    <Footer/>
 

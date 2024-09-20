@@ -1,4 +1,4 @@
-* {
+.servicesPage{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,7 +18,7 @@ header {
     padding: 1rem 0;
 }
 
-header .container {
+header .container1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,7 +58,7 @@ header .contact-info {
     text-align: center;
 }
 
-.our-services .container {
+.our-services .container1 {
     max-width: 1200px;
     margin: auto;
 }
@@ -103,7 +103,7 @@ header .contact-info {
     background-color: #fff;
 }
 
-.services-details .container {
+.services-details .container1 {
     max-width: 1200px;
     margin: auto;
 }
@@ -119,6 +119,7 @@ header .contact-info {
     max-width: 500px;
     border-radius: 10px;
     margin-right: 20px;
+  
 }
 
 .service-detail:nth-child(even) img {
@@ -168,7 +169,7 @@ header .contact-info {
     background-color: #f4f4f4;
 }
 
-.images-section .container {
+.images-section .container1 {
     max-width: 1200px;
     margin: auto;
     text-align: center;

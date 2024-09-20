@@ -1,8 +1,5 @@
-/* General Styles */
 
-  
-  /* Container for the form */
-  .form-container {
+  .form-container1 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,7 +8,7 @@
     padding: 20px;  
   }
   
-  /* Form Styles */
+
   .form {
     display: flex;
     flex-direction: column;
@@ -25,7 +22,7 @@
     border: 1px solid #333;
   }
   
-  /* Title and other form styles remain unchanged */
+ 
   .title {
     font-size: 28px;
     font-weight: 600;

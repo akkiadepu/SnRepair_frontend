@@ -1,91 +1,3 @@
-// import React from 'react'
-// import './AdminDashboardStyle.css';
-// import { useEffect, useState } from "react";
-
-// import axios from "axios";
-// import AdminNav from './AdminNav';
-
-
-// function AdminDashboard() {
-  
-//     const [projectTitle, setProjectTitle] = useState('');
-//     const [beforeImage, setBeforeImage] = useState(null);
-//     const [afterImage, setAfterImage] = useState(null);
-//     const [description, setDescription] = useState('');
-  
-//     const handleSubmit = async (event) => {
-//       event.preventDefault();
-      
-//       const formData = new FormData();
-//       formData.append('projectTitle', projectTitle);
-//       formData.append('beforeImage', beforeImage);
-//       formData.append('afterImage', afterImage);
-//       formData.append('description', description);
-  
-//       try {
-//         const response = await axios.post('/api/admin/register', formData, {
-//           headers: {
-//             'Content-Type': 'multipart/form-data'
-//           }
-//         });
-//         alert(response.data);
-//         console.log(response.data);
-  
-//         setProjectTitle('');
-//         setBeforeImage(null);
-//         setAfterImage(null);
-//         setDescription('');
-//         // Reset the file input fields
-//         document.getElementById('beforeImage').value = '';
-//         document.getElementById('afterImage').value = '';
-  
-//       } catch (error) {
-  
-//         console.error("There was an error submitting the form!", error);
-//         alert(`Error: ${error.response ? error.response.data : error.message}`);
-        
-//       }
-//     };
-  
-//     return (
-//       <div>
-//         Admin
-
-//         <AdminNav/>
-//         <form class="form" onSubmit={handleSubmit}>
-//           <p class="title">Register </p>
-//           <p class="message">Signup now and get full access to our app. </p>
-//           <div class="flex">
-//             <label>
-//               <input class="input" type="text" placeholder="" value={projectTitle} onChange={(e) => setProjectTitle(e.target.value)} required />
-//               <span>Project title</span>
-//             </label>
-//           </div>
-  
-//           <div class="container">
-//             <label htmlFor="beforeImage">Choose before a image:</label>
-//             <input accept=".jpg, .jpeg, .png, .svg, .png" className="inpdddut" name="beforeImage" id="beforeImage" type="file"  onChange={(e) => setBeforeImage(e.target.files[0])} required/>
-  
-//             <label htmlFor="afterImage">Choose after a image:</label>
-//             <input accept=".jpg, .jpeg, .png, .svg, .png" className="inpdddut" name="afterImage" id="afterImage" type="file" onChange={(e) => setAfterImage(e.target.files[0])} required/>
-//             {/* <input value="Send" type="submit" class="inpdddut"/> */}
-//           </div>
-  
-//           <label>
-//             <input className="input" type="text" placeholder="" value={description} onChange={(e) => setDescription(e.target.value)} required/>
-//             <span>Desc</span>
-//           </label>
-  
-//           <button className="submit" type="submit">Submit</button>
-//           <button className="submit" type="reset">reset</button>
-  
-//         </form>
-//       </div>
-//     )
-
-// }
-
-// export default AdminDashboard;
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -94,9 +6,14 @@ import AdminNav from './AdminNav';
 
 function AdminDashboard() {
   const [activities, setActivities] = useState([]);
+  const [editActivityId, setEditActivityId] = useState(null); // State to track the activity being edited
+  const [selectedActivity, setSelectedActivity] = useState(null); // State for storing changes
 
-  // Fetch project activities from the backend
   useEffect(() => {
+    fetchActivities();
+  }, []);
+
+  const fetchActivities = () => {
     axios.get(`${process.env.REACT_APP_BACKEND_URL}/image/project-activities`)
       .then(response => {
         setActivities(response.data);
@@ -104,9 +21,8 @@ function AdminDashboard() {
       .catch(error => {
         console.error('Error fetching project activities:', error);
       });
-  }, []);
+  };
 
-  // Function to fetch the image blob
   const fetchImage = async (fileName) => {
     try {
       const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/image/fileSystem/${fileName}`, {
@@ -116,15 +32,61 @@ function AdminDashboard() {
       return imageURL;
     } catch (error) {
       console.error('Error fetching image:', error);
-      return 'path/to/fallback/image.jpg'; // Fallback image on error
+      return 'path/to/fallback/image.jpg';
     }
+  };
+
+  const handleDelete = (id) => {
+    axios.delete(`${process.env.REACT_APP_BACKEND_URL}/image/${id}`)
+      .then(() => {
+        fetchActivities();
+      })
+      .catch(error => {
+        console.error('Error deleting activity:', error);
+      });
+  };
+
+  const handleUpdateClick = (activity) => {
+    setEditActivityId(activity.id); // Set the activity being edited
+    setSelectedActivity({ ...activity }); // Copy activity data for editing
+  };
+
+  const handleSave = (id) => {
+    const formData = new FormData();
+    formData.append('projectTitle', selectedActivity.projectTitle);
+    formData.append('description', selectedActivity.description);
+
+    if (selectedActivity.beforeImage) {
+      formData.append('beforeImage', selectedActivity.beforeImage);
+    }
+    if (selectedActivity.afterImage) {
+      formData.append('afterImage', selectedActivity.afterImage);
+    }
+
+    axios.put(`${process.env.REACT_APP_BACKEND_URL}/image/${id}`, formData)
+      .then(() => {
+        fetchActivities();
+        setEditActivityId(null); // Exit edit mode
+      })
+      .catch(error => {
+        console.error('Error updating activity:', error);
+      });
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setSelectedActivity({ ...selectedActivity, [name]: value });
+  };
+
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    setSelectedActivity({ ...selectedActivity, [name]: files[0] });
   };
 
   return (
     <div>
-      <h2>Project Activities</h2>
       <AdminNav />
-      <div className='container'>
+      <div className="container1">
         <table>
           <thead>
             <tr>
@@ -132,19 +94,101 @@ function AdminDashboard() {
               <th>Description</th>
               <th>Before Image</th>
               <th>After Image</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {activities.map((activity, index) => (
               <tr key={index}>
-                <td>{activity.projectTitle}</td>
-                <td>{activity.description}</td>
-                <td>
-                  <AsyncImage fileName={activity.beforeImageName} fetchImage={fetchImage} />
-                </td>
-                <td>
-                  <AsyncImage fileName={activity.afterImageName} fetchImage={fetchImage} />
-                </td>
+                {editActivityId === activity.id ? (
+                  <>
+                    <td>
+                      <div class="inputGroup">
+                        <input
+                          type="text"
+                          name="projectTitle"
+                          value={selectedActivity.projectTitle}
+                          onChange={handleInputChange}
+                          required
+                          autocomplete="off"
+                        />
+                       
+                      </div>
+                    </td>
+                    <td>
+                      <div class="inputGroup">
+                        <input
+                          type="text"
+                          name="description"
+                          value={selectedActivity.description}
+                          onChange={handleInputChange}
+                          required
+                          autocomplete="off"
+                        />
+                       
+                      </div>
+                    </td>
+                    <td>
+                      <div class="inputGroup">
+                        <AsyncImage fileName={activity.beforeImageName} fetchImage={fetchImage}  className="Adminimage"/>
+                        <input
+                          type="file"
+                          name="beforeImage"
+                          onChange={handleFileChange}
+                          required
+                        />
+                        {/* <label htmlFor="beforeImage">Before Image</label> */}
+                      </div>
+                    </td>
+                    <td>
+                      <div class="inputGroup">
+                        <AsyncImage fileName={activity.afterImageName} fetchImage={fetchImage} className="Adminimage"/>
+                        <input
+                          type="file"
+                          name="afterImage"
+                          onChange={handleFileChange}
+                          required
+                        />
+                        {/* <label htmlFor="afterImage">After Image</label> */}
+                      </div>
+                    </td>
+                    <td>
+                      <button className="button-Admin" onClick={() => handleSave(activity.id)}>
+                        <span className="shadow"></span>
+                        <span className="edge"></span>
+                        <span className="front">Save</span>
+                      </button>
+                      <button className="button-Admin" onClick={() => setEditActivityId(null)}>
+                        <span className="shadow"></span>
+                        <span className="edge"></span>
+                        <span className="front">Cancel</span>
+                      </button>
+                    </td>
+                  </>
+                ) : (
+                  <>
+                    <td>{activity.projectTitle}</td>
+                    <td>{activity.description}</td>
+                    <td>
+                      <AsyncImage fileName={activity.beforeImageName} fetchImage={fetchImage} className="Adminimage"/>
+                    </td>
+                    <td>
+                      <AsyncImage fileName={activity.afterImageName} fetchImage={fetchImage} className="Adminimage"/>
+                    </td>
+                    <td>
+                      <button className="button-Admin" onClick={() => handleUpdateClick(activity)}>
+                        <span className="shadow"></span>
+                        <span className="edge"></span>
+                        <span className="front">Update</span>
+                      </button>
+                      <button className="button-Admin" onClick={() => handleDelete(activity.id)}>
+                        <span className="shadow"></span>
+                        <span className="edge"></span>
+                        <span className="front">Delete</span>
+                      </button>
+                    </td>
+                  </>
+                )}
               </tr>
             ))}
           </tbody>
@@ -154,7 +198,6 @@ function AdminDashboard() {
   );
 }
 
-// Separate component to handle image fetching
 function AsyncImage({ fileName, fetchImage }) {
   const [imageSrc, setImageSrc] = useState(null);
 
@@ -171,6 +214,7 @@ function AsyncImage({ fileName, fetchImage }) {
 }
 
 export default AdminDashboard;
+
 
 
 

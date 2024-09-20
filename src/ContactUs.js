@@ -2,6 +2,8 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer';
 import './ContactUsStyle.css';
+import RequestForm from './components/RequestForm';
+
 
 
 function ContactUs() {
@@ -23,7 +25,7 @@ function ContactUs() {
                     <a href="#"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-            <div class="contact-form">
+            {/* <div class="contact-form">
                 <form action="#" method="post">
                     <label for="name">Name<span>*</span></label>
                     <input type="text" id="name" name="name" required/>
@@ -45,7 +47,10 @@ function ContactUs() {
                     
                     <button type="submit">Send Request</button>
                 </form>
-            </div>
+            </div> */}
+
+              <RequestForm/>
+
         </section>
         <section class="map-section">
             <h2>Head Office</h2>

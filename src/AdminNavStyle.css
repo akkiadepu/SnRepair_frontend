@@ -1,8 +1,8 @@
-.active{
+/* .active{
     background-color: #325ccd;
-}
+} */
 
-nav {
+.AdminNav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,9 +11,10 @@ nav {
     position: sticky;
     top: 0;
     border-bottom: 4px solid rgba(144, 143, 143, 0.2);
+    padding-top: 0.5rem; 
 }
 
-nav .title {
+.AdminNav .title {
     font-size: 1.5rem;
     margin: 1rem;
     font-weight: bold;
@@ -21,15 +22,15 @@ nav .title {
     color: rgb(0, 0, 255);
 }
 
-nav ul {
+.AdminNav ul {
     display: flex;
 }
 
-nav ul li {
+.AdminNav ul li {
    list-style: none; 
 }
 
-nav ul li a {
+.AdminNav ul li a {
     display: block;
     text-decoration: none;
     color: black;
@@ -38,11 +39,11 @@ nav ul li a {
     border-radius: 0.5rem;
 }
 
-nav ul li a:not(.active):hover {
+.AdminNav ul li a:not(.active):hover {
     background-color:#546291 ;
 }
 
-nav .menu {
+.AdminNav .menu {
     display: none;
     position: absolute;
     top: 0.75rem;
@@ -53,41 +54,56 @@ nav .menu {
     height: 2rem;
 }
 
-nav .menu span {
+.AdminNav .menu span {
     height: 0.4rem;
     width: 100%;
     background-color: #fff;
     border-radius: 0.2rem;
 }
 
+.logout-button {
+    background-color: #f00; 
+    color: #fff; 
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.logout-button:hover {
+    background-color: #c00; 
+}
+
+
 
 @media (max-width: 480px) {
-    nav .menu {
+    .AdminNav .menu {
         display: flex;
     }
 
-    nav {
+    .AdminNav {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    nav ul {
+    .AdminNav ul {
         display: none;
         flex-direction: column;
         width: 100%;
         margin-bottom: 0.25rem;
     }
 
-    nav ul.open {
+    .AdminNav ul.open {
         display: flex;
     }
 
-    nav ul li {
+    .AdminNav ul li {
         width: 100%;
         text-align: center;
     }
 
-    nav ul li a {
+    .AdminNav ul li a {
         margin: 0.2rem 0.5rem;
     }
 }

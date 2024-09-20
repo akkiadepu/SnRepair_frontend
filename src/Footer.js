@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div>
          <footer>
-        <div className="container">
+        <div className="container1">
             <div className="footer-content">
                 <div className="footer-logo">
                     <img src="logo.png" alt="SN Auto Enterprises"/>

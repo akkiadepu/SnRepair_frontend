@@ -4,17 +4,20 @@ import Header from './Header'
 import './Homestyle.css';
 import Footer from './Footer';
 
+import RequestForm from './components/RequestForm';
+import HomeActivitsComponent from './components/HomeActivitsComponent';
+
 function Home() {
   return (
     
     <div>
 <Header/>
          <section id="hero" className="hero">
-        <div className="container">
+        <div className="container1">
             <div className="hero-content">
                 <h1>we care about your car</h1>
                 <p>Felis etiam pellentesque scelerisque eleifend in aliquam sed morbi nisl lectus mi proin ultricies quis bibendum.</p>
-                <a href="tel:+918501015055" className="cta-button">
+                <a href="#" className="cta-button">
                     <i className="fas fa-phone"></i> Call Us Today: +91 85010 15055
                 </a>
             </div>
@@ -22,7 +25,7 @@ function Home() {
     </section>
 
     <section id="services" className="services">
-    <div className="container">
+    <div className="container1">
         <h2>Our Services</h2>
         <div className="service-list">
             <div className="service-item">
@@ -47,25 +50,28 @@ function Home() {
               
             </div>
         </div>
-     <center> <button  ><a href="Services" className="activity-link">All services</a>
-       </button></center>
+     <center> <a href="Services" className="activity-links">Our services</a>
+       </center>
     </div>
 </section>
 
-    <section id="activities" className="activities">
-    <div className="container">
+    {/* <section id="activities" className="activities">
+    <div className="container1">
         <h2>Latest Activities</h2>
       <h3>lskhbfldiukghfdisgfbvliuskj bikbiudsakfbsdliuk,gsduik lhgaudligkasuilakgsliuk</h3>
       <br/>
-      <br/>
-        <div className="activity-list">
-            <div className="activity-item">
+      <br/> */}
+        {/* <div className="activity-list"> */}
+            {/* <div className="activity-item">
                 <img src="https://wallpaperaccess.com/full/2085201.jpg" alt="Activity 1"/>
                 <h3>Activity Title 1</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
               <a href="activits" className="activity-link">Click Here</a>
-            </div>
-            <div className="activity-item">
+            </div> */}
+         
+            <HomeActivitsComponent/>
+          
+            {/* <div className="activity-item">
                 <img src="https://img.freepik.com/premium-photo/disc-brake-vehicle-repair-process-new-tire-replacement-car-brake-repairing-garage-suspension-car-maintenance-brakes-shock-absorber-systems-close-up_189498-1879.jpg?w=2000" alt="Activity 2"/>
                 <h3>Activity Title 2</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
@@ -83,13 +89,13 @@ function Home() {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
               <br/>
                 <a href="activits" className="activity-link">Click Here</a>
-            </div>
-        </div>
-    </div>
-</section>
+            </div> */}
+        {/* </div> */}
+    {/* </div>
+</section> */}
   
    <section id="why-choose-us" className="why-choose-us">
-        <div className="container">
+        <div className="container1">
             <h2>Why Choose Us</h2>
             <div className="features">
                 <div className="feature">
@@ -117,7 +123,7 @@ function Home() {
     </section>
 
     <section id="testimonials" className="testimonials">
-        <div className="container">
+        <div className="container1">
             <h2>Testimonial</h2>
             <div className="testimonial-list">
                 <div className="testimonial-item">
@@ -156,7 +162,7 @@ function Home() {
     </section>
 
     <section id="request-info" className="request-info">
-        <div className="container">
+        <div className="container1">
             <div className="request-content">
                 <div className="request-text">
                     <h2>Request Info</h2>
@@ -167,7 +173,7 @@ function Home() {
                         <li>Pulvinar dapibus leo</li>
                     </ul>
                 </div>
-                <div className="request-form">
+                {/* <div className="request-form">
                     <form action="#">
                         <label for="name">Name *</label>
                         <input type="text" id="name" name="name" required/>
@@ -189,51 +195,13 @@ function Home() {
 
                         <button type="submit">Send Request</button>
                     </form>
-                </div>
+                </div> */}
+                    <RequestForm/>
+                
             </div>
         </div>
     </section>
 
-  
-
-    {/* <footer>
-        <div className="container">
-            <div className="footer-content">
-                <div className="footer-logo">
-                    <img src="logo.png" alt="SN Auto Enterprises"/>
-                </div>
-                <div className="footer-about">
-                    <p>SN Auto Enterprises<br/> GMC-405, Auto Nagar, Vijayawada, Andhra Pradesh 520007<br/> polaunnav@gmail.com<br/> +91 8790096926</p>
-                </div>
-                <div className="footer-services">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#services">Repairing Solutions</a></li>
-                        <li><a href="#services">Painting Works</a></li>
-                        <li><a href="#services">Washing & Maintenances</a></li>
-                        <li><a href="#services">And More</a></li>
-                    </ul>
-                </div>
-                <div className="footer-company">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#activities">Activities</a></li>
-                        <li><a href="#about-us">About Us</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div className="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <p className="footer-bottom">Copyright © 2024 My Blog | Powered by SN Auto Enterprises</p>
-        </div>
-    </footer> */}
 
     <Footer/>
 

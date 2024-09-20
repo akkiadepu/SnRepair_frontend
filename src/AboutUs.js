@@ -8,14 +8,14 @@ function AboutUs() {
     <div>
       <Header/>
         <section class="about-us">
-        <div class="container">
+        <div class="container1">
             <h1>About Us</h1>
         </div>
     </section>
 
   
     <section className="fixing-cars">
-        <div className="container">
+        <div className="container1">
             <div className="fixing-cars-content">
                 <div className="left">
                     <h2>Fixing car and Trucks 
@@ -30,7 +30,7 @@ function AboutUs() {
 
     {/* <!-- Stats Section --> */}
     <section className="stats">
-        <div className="container">
+        <div className="container1">
             <ul className="about-stats">
                 <li><strong>23</strong> Years in Business</li>
                 <li><strong>500+</strong> Happy Customers</li>
@@ -41,7 +41,7 @@ function AboutUs() {
 
     {/* <!-- Image and Text Section --> */}
     <section className="image-text">
-        <div className="container about-content">
+        <div className="container1 about-content">
             <div className="about-image">
                 <img src="https://i.pinimg.com/originals/8c/76/a5/8c76a57cb3e88094115d2aa96cd1e6ad.jpg" alt="About Us Image"/>
             </div>
@@ -65,7 +65,7 @@ function AboutUs() {
 
     {/* <!-- Testimonials Section --> */}
     <section className="testimonials">
-        <div className="container">
+        <div className="container1">
             <h2>Testimonial</h2>
             <div className="testimonial-list">
                 <div className="testimonial-item">

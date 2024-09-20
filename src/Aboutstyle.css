@@ -20,7 +20,7 @@ body {
     text-align: center;
 }
 
-.about-us .container {
+.about-us .container1 {
     max-width: 1200px;
     margin: auto;
 }
@@ -37,7 +37,7 @@ body {
     background-color: #fff;
 }
 
-.fixing-cars .container {
+.fixing-cars .container1 {
     max-width: 1200px;
     margin: auto;
 }
@@ -68,7 +68,7 @@ body {
     text-align: center;
 }
 
-.stats .container {
+.stats .container1 {
     max-width: 1200px;
     margin: auto;
 }
@@ -97,7 +97,7 @@ body {
     background-color: #edf2f4;
 }
 
-.image-text .container {
+.image-text .container1 {
     max-width: 1200px;
     margin: auto;
 }
@@ -147,7 +147,7 @@ body {
     text-align: center;
 }
 
-.testimonials .container {
+.testimonials .container1 {
     max-width: 1200px;
     margin: auto;
 }
@@ -202,7 +202,7 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
-    header .container {
+    header .container1 {
         padding: 0 10px;
     }
 
@@ -221,7 +221,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    header .container {
+    header .container1 {
         flex-direction: column;
         text-align: center;
     }

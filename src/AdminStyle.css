@@ -1,4 +1,4 @@
-.Admincontainer{
+.Admincontainer1{
   text-align: center;
   padding-left: 40%;
   padding-top: 10%;
@@ -21,17 +21,17 @@
   color: #efe7e7;
 }
 
-.input-container {
+.input-container1 {
   position: relative;
 }
 
-.input-container input, .form button {
+.input-container1 input, .form button {
   outline: none;
   border: 1px solid #e5e7eb;
   margin: 8px 0;
 }
 
-.input-container input {
+.input-container1 input {
   background-color: #fff;
   padding: 1rem;
   padding-right: 3rem;
