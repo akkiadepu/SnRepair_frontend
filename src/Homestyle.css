@@ -5,15 +5,15 @@
     font-family: Arial, sans-serif;
 }
 
-body {
+/* body {
     line-height: 1.6;
-    color: #edf2f4; /* Light grey */
-    background-color: #edf2f4; /* Light grey */
-}
+    color: #edf2f4; /* Light grey 
+    background-color: #edf2f4;  Light grey 
+} */
 
-header {
-    background: #2b2d42; /* Dark blue */
-    color: #edf2f4; /* Light grey */
+/* header {
+    background: #2b2d42; /* Dark blue 
+    color: #edf2f4; /* Light grey 
     padding: 1rem 0;
 }
 
@@ -26,8 +26,9 @@ header .container1 {
     padding: 0 20px;
 }
 
-.logo img {
-    width: 50px;
+.logo1 img {
+    width: 80px;
+    height: 55px;
 }
 
 nav ul {
@@ -40,10 +41,10 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #edf2f4; /* Light grey */
+    color: #edf2f4; 
     text-decoration: none;
     font-size: 1rem;
-}
+} */
 
 .contact-info {
     color: #edf2f4; /* Light grey */
@@ -51,8 +52,12 @@ nav ul li a {
 }
 
 .hero {
-    background: #8d99ae; /* Greyish blue */
-    color: #edf2f4; /* Light grey */
+    /* background: #8d99ae;  */
+    background-image: url(./pexels-cottonbro-4489732.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 76vh;
+    color: #8d99ae; /* Light grey  #edf2f4*/
     text-align: center;
     padding: 100px 20px;
 }
@@ -65,7 +70,7 @@ nav ul li a {
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    color: #ef233c; /* Red */
+    color: red; /* Red */
 }
 
 .hero-content p {
@@ -434,7 +439,8 @@ footer .container1 {
 }
 
 .footer-logo img {
-    width: 50px;
+    width: 65px;
+    height: 50px;
 }
 
 .footer-about,
@@ -498,7 +504,7 @@ footer .container1 {
 
 
 @media (max-width: 768px) {
-    header .container1 {
+    /* header .container1 {
         flex-direction: column;
         text-align: center;
     }
@@ -510,7 +516,7 @@ footer .container1 {
 
     nav ul li {
         margin: 10px 0;
-    }
+    } */
 
     .hero-content h1 {
         font-size: 2rem;
@@ -598,14 +604,14 @@ footer .container1 {
 }
 
 @media (max-width: 576px) {
-    nav ul {
+    /* nav ul {
         flex-direction: column;
         text-align: center;
     }
 
     nav ul li {
         margin: 10px 0;
-    }
+    } */
 
     .hero-content h1 {
         font-size: 1.5rem;

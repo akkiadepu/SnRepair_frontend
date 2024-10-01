@@ -1,5 +1,6 @@
 import React from 'react'
 import './Homestyle.css';
+import logo from "./logo.png";
 
 function Footer() {
   return (
@@ -8,7 +9,7 @@ function Footer() {
         <div className="container1">
             <div className="footer-content">
                 <div className="footer-logo">
-                    <img src="logo.png" alt="SN Auto Enterprises"/>
+                    <img src={logo} alt="SN Auto Enterprises"/>
                 </div>
                 <div className="footer-about">
                     <p>SN Auto Enterprises<br/> GMC-405, Auto Nagar, Vijayawada, Andhra Pradesh 520007<br/> polaunnav@gmail.com<br/> +91 8790096926</p>

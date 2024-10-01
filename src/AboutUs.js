@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
 import "./Aboutstyle.css";
+import profile from './login-user.png';
 
 function AboutUs() {
   return (
@@ -70,24 +71,24 @@ function AboutUs() {
             <div className="testimonial-list">
                 <div className="testimonial-item">
                     <p>I have brought my brand new Tata Punch for a scratch removal work. I am impressed with the owner and staff in explaining the work to be done and pros/cons. As promised, their work speaks</p>
-                    <img src="testimonial1.jpg" alt="Hemanth Chintala"/>
+                    <img src={profile} alt="Hemanth Chintala"/>
                     <div class="testimonial-author">Hemanth Chintala</div>
                     <div class="testimonial-role">Google Reviewer</div>
                 </div>
                 <div class="testimonial-item">
                     <p>They are known for passionate, genuinity, trust, best advice, customer friendly, they love their work. They know kind of looting the customer money. I am really happy with their service Thank you! Prasad & Krishna garu.</p>
-                    <img src="testimonial2.jpg" alt="Mohan R V"/>
+                    <img src={profile} alt="Mohan R V"/>
                     <div class="testimonial-author">Mohan R V</div>
                     <div class="testimonial-role">Google Reviewer</div>
                 </div>
                 <div class="testimonial-item">
                     <p>Excellent service for cars.....highly professional.....Good services for car washing, painting & ceramic coating.</p>
-                    <img src="testimonial3.jpg" alt="Sundeep K Sunadh"/>
+                    <img src={profile} alt="Sundeep K Sunadh"/>
                     <div class="testimonial-author">Sundeep K Sunadh</div>
                     <div class="testimonial-role">Google Reviewer</div>
                 </div>
             </div>
-            <a href="#" class="see-more-comments">See more comments →</a>
+            <a href="https://www.google.com/maps/place/SN+AUTO+ENTERPRISES/@16.5081113,80.6699006,17z/data=!4m8!3m7!1s0x3a35fb9b8e442b9b:0xa9c8b28b5b69cb0e!8m2!3d16.5081113!4d80.6724755!9m1!1b1!16s%2Fg%2F11j01htl2d?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D" target='_black' class="see-more-comments">See more comments →</a>
         </div>
     </section>
 

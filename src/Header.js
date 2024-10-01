@@ -1,15 +1,22 @@
-import React from 'react'
-import './Homestyle.css';
+import React, { useState } from "react";
+
 import { Link, NavLink } from 'react-router-dom';
+import logo from "./logo.png";
+import "./CSS/Header.css";
 
 function Header() {
+        const [menuOpen, setMenuOpen] = useState(false);
+      
+        const toggleMenu = () => {
+          setMenuOpen(!menuOpen);
+        };
     
   return (
     <div>
-         <header>
+         {/* <header>
         <div className="container1">
-            <div className="logo">
-                <img src="logo.png" alt="SN Repair Logo"/>
+            <div className="logo1">
+                <img src={logo} alt="SN Repair Logo"/>
             </div>
             <nav>
                 <ul>
@@ -22,10 +29,46 @@ function Header() {
                 </ul>
             </nav>
             <div className="contact-info">
-                <p>Have any questions? <br/> <a href="tel:+918790096926">+91 8790096926</a></p>
+                <p>Have any questions? <br/> <a href="#">+91 8790096926</a></p>
             </div>
         </div>
-    </header>
+    </header> */}
+
+
+  <Header>
+      <div className="container1">
+        <div className="logo1">
+          <img src={logo} alt="SN Repair Logo" />
+        </div>
+        <button className="mobile-menu-btn" onClick={toggleMenu}>
+          &#9776; {/* Mobile menu icon */}
+        </button>
+        <nav>
+          <ul className={menuOpen ? "menu show" : "menu"}>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/services">Services</NavLink>
+            </li>
+            <li>
+              <NavLink to="/activits">Activits</NavLink>
+            </li>
+            <li>
+              <NavLink to="/aboutUs">AboutUs</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contactUs">ContactUs</NavLink>
+            </li>
+          </ul>
+        </nav>
+        <div className="contact-info">
+          <p>
+            Have any questions? <br /> <a href="#">+91 8790096926</a>
+          </p>
+        </div>
+      </div>
+    </Header>
 
     </div>
   )

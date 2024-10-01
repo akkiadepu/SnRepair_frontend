@@ -3,6 +3,7 @@ import React from 'react'
 import Header from './Header'
 import './Homestyle.css';
 import Footer from './Footer';
+import profile from './login-user.png';
 
 import RequestForm from './components/RequestForm';
 import HomeActivitsComponent from './components/HomeActivitsComponent';
@@ -129,7 +130,7 @@ function Home() {
                 <div className="testimonial-item">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
                     <div className="testimonial-author">
-                        <img src="https://via.placeholder.com/50" alt="Author 1"/>
+                        <img src={profile} alt="Author 1"/>
                         <div>
                             <p className="name">Hemanth Chintala</p>
                             <p className="role">Google Reviewer</p>
@@ -139,7 +140,7 @@ function Home() {
                 <div className="testimonial-item">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
                     <div className="testimonial-author">
-                        <img src="https://via.placeholder.com/50" alt="Author 2"/>
+                        <img src={profile} alt="Author 2"/>
                         <div>
                             <p className="name">Mohan R V</p>
                             <p className="role">Google Reviewer</p>
@@ -149,7 +150,7 @@ function Home() {
                 <div className="testimonial-item">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
                     <div className="testimonial-author">
-                        <img src="https://via.placeholder.com/50" alt="Author 3"/>
+                        <img src={profile} alt="Author 3"/>
                         <div>
                             <p className="name">Sundeep Sunadi</p>
                             <p className="role">Google Reviewer</p>
