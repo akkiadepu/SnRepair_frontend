@@ -35,7 +35,7 @@ function Header() {
     </header> */}
 
 
-  <Header>
+  
       <div className="container1">
         <div className="logo1">
           <img src={logo} alt="SN Repair Logo" />
@@ -68,7 +68,7 @@ function Header() {
           </p>
         </div>
       </div>
-    </Header>
+    
 
     </div>
   )
